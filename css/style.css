@@ -1,0 +1,146 @@
+/* Normalize */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Root */
+:root{
+  /* Primary */
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+body{
+  height: 100vh;
+}
+main{
+  height: 100%;
+  background-color: var(--Violet);
+  background-image: url(../images/bg-desktop.svg);
+  background-size: 100% 100%;
+}
+h1{
+  opacity: 0;
+  position: absolute;
+}
+section{
+  font-family: 'Poppins';
+  height: 100%;
+  color: white;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 5% 50% 5% 35% 5%;
+  grid-template-rows: repeat(10, 1fr);
+}
+figure:first-child{
+  grid-area: 1/2/3/3;
+}
+figure:first-child img{
+  width: 50%;
+}
+figure:nth-child(2){
+  grid-area: 3/2/10/3;
+}
+figure:nth-child(2) img{
+  width: 100%;
+}
+section h2{
+  font-size: 43px;
+  align-self: center;
+  grid-area: 3/4/6/5;
+}
+section p{
+  font-family: 'Open Sans';
+  font-size: large;
+  align-self: center;
+  grid-area: 5/4/8/5;
+}
+section>a{
+  width: fit-content;
+  padding: 10px 75px;
+  border-radius: 50px;
+  font-size: larger;
+  color: var(--Violet);
+  background-color: white;
+  text-decoration: none;
+  align-self: center;
+  grid-area: 7/4/9/5;
+}
+section>a:hover{
+  color: white;
+  background-color: var(--Soft-Magenta);
+}
+section .social{
+  text-align: center;
+  display: flex;
+  gap: 20px;
+  justify-self: flex-end;
+  grid-area: 9/4/11/5;
+}
+.social a{
+  padding: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+.social a:hover{
+  color: var(--Soft-Magenta);
+  border-color: var(--Soft-Magenta);
+}
+@media (max-width: 1200px) {
+  section h2{
+    font-size: xx-large;
+  }
+  section p{
+    font-size: medium;
+  }
+  section>a{
+    font-size: medium;
+  }
+  .social a{
+    width: 30px;
+    height: 30px;
+  }
+}
+@media (max-width: 768px) {
+  main{
+    background-image: url(../images/bg-mobile.svg);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+  }
+  section{
+    padding: 20px;
+    min-width: 300px;
+    max-width: 425px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  section h2{
+    text-align: center;
+    font-size: 26px;
+  }
+  section p{
+    text-align: center;
+  }
+  .social{
+    padding-top: 15px;
+    align-self: center;
+  }
+}
